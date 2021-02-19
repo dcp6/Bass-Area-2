@@ -3,7 +3,13 @@
     padding:0;
     box-sizing:border-box;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+      height:auto!important;
+}
 body {
+    width:100%;
     background-color:black;
     background-image: url(../images/concert-pick.jpeg);
 	color: white;
@@ -65,7 +71,7 @@ body {
   margin-bottom: 5px;
   position: relative;
   
-  background: #cdcdcd;
+  background: white;
   border-radius: 3px;
   
   z-index: 1;
@@ -113,7 +119,7 @@ body {
   padding: 50px;
   padding-top: 125px;
   
-  background: #ededed;
+  background: white;
   list-style-type: none;
   
   transform-origin: 0% 0%;
@@ -136,19 +142,22 @@ body {
 #desktop-menu-holder {
     display:none;
 }
+/*End menu*/
+/*Grid item defition*/
 #grid-item-container {
     clear:both;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px 100px;
+    grid-column-gap:1rem;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px;
 }
+/*main page organization*/
 .main-headline-holder {
     justify-content: center;
-    grid-column-start: 2;
-    grid-row-start: 2;
+    grid-column-start: 4;
+    grid-row-start: 3;
 }
 h1.main-headline {
-    
     font-family:'Roboto Slab', sans-serif;
     }
 p.main-page-text {
@@ -157,27 +166,34 @@ p.main-page-text {
 /*Start Tablet Sizing*/
 @media screen and (min-width:576px){
     body {
+        width:100%;
+        overflow-x: hidden;
     }
    
     #grid-item-container {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px 100px 100px;
     }
     .main-headline-holder {
-        grid-column-start: 6;
-        grid-row-start: 2;
+        grid-column-start: 5;
+        grid-column-end:11;
+        grid-row-start: 3;
+        
     }
     .main-headline {
-        font-size:5rem;
+        font-size:3rem;
     }
     .main-page-text {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }/*end tablets sizing*/
 
 
 @media screen and (min-width:1025px){
     body {
+        max-width: 100%;
+        overflow-x:hidden;
+        
     }
      #menuToggle {
         display:none;
@@ -202,7 +218,6 @@ p.main-page-text {
     }
     .login-link {
         float:right;
-        margin-right:5%;
     }
     #desktop-menu-holder ul a {
         color:white !important;
@@ -222,6 +237,11 @@ p.main-page-text {
 	grid-column-gap: 1em;
 	grid-template-rows: 100px 100px 100px;
     }
-    
+    .main-headline {
+        font-size:3rem;
+    }
+    .main-page-text {
+        font-size: 1.2rem;
+    }
    
 }/*end desktop sizing*/
