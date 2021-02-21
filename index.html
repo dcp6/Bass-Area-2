@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+<div id="page-container">
 <nav role="navigation">
   <div id="menuToggle">
     <input type="checkbox" />
@@ -22,17 +22,13 @@
     <span></span>
     <span></span>
     
-    <!--
-    Too bad the menu has to be inside of the button
-    but hey, it's pure CSS magic.
-    -->
+
     <ul id="menu">
-      <a href="#"><li>Home</li></a>
+      <a href="index.html"><li>Home</li></a>
+      <a href="news.html"><li>News</li></a>
       <a href="#"><li>Performers</li></a>
       <a href="#"><li>Venues</li></a>
-      <a href="#"><li>About</li></a>
       <a href="#"><li>Info</li></a>
-      <a href="#"><li>Contact</li></a>
       <a href="login-page.html"><li>Login</li></a>
     
     </ul>
@@ -40,13 +36,15 @@
 <div id="desktop-menu-holder">
 
     <ul id="desktop-menu">
-      <a href="#"><li>Home</li></a>
+      <li><img class="logo-img-header" src="images/fin-logo.png"></li>
+      <li class="logo-name bass-area-text">BASS AREA</li>
+      <a href="index.html"><li>Home</li></a>
+      <a href="news.html"><li>News</li></a>
       <a href="#"><li>Performers</li></a>
       <a href="#"><li>Venues</li></a>
-      <a href="#"><li>About</li></a>
       <a href="#"><li>Info</li></a>
-      <a href="#"><li>Contact</li></a>
       <a class="login-link" href="login-page.html"><li>Login</li></a>
+      
    
     </ul>
  
@@ -56,9 +54,20 @@
 <div id="grid-item-container">
 <div class="main-headline-holder">
 
-<h1 class="main-headline">Welcome to Bass Area</h1>
+<h1 class="main-headline">Welcome to <span class="bass-area-text">BASS AREA</span>!</h1>
 <p class="main-page-text">Go ahead and click on a link to get started. Check out the menu up above.</p>
 </div><!--end main-headline-holder-->
+
 </div><!--grid-item-container-->
+
+<footer class="main-page-footer">
+    <ul>
+    <li>Web Design by Dan</li>
+    <li>&copy; Daniel C Powell 2021 </li>
+    <li><a href= "">Contact</a></li>
+ 
+    </ul>
+    </footer>
+</div>
 </body>
 </html>

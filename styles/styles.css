@@ -4,12 +4,11 @@
     box-sizing:border-box;
 }
 html, body {
-    max-width: 100%;
+    height:100%;
+    width:100%;
     overflow-x: hidden;
-      height:auto!important;
 }
 body {
-    width:100%;
     background-color:black;
     background-image: url(../images/concert-pick.jpeg);
 	color: white;
@@ -18,14 +17,14 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
-
 /*Hamburger menu designed by Erik Terwan November 2015*/
+/*https://codepen.io/erikterwan/pen/EVzeRP*/
 #menuToggle
 {
   display: block;
   position: relative;
-  top: 50px;
-  left: 50px;
+  top: 25px;
+  left: 15px;
   
   z-index: 1;
   
@@ -41,7 +40,7 @@ body {
   transition: color 0.3s ease;
 }
 
-#menuToggle a:hover
+#menuToggle a:hover, a:active
 {
   color: tomato;
 }
@@ -115,6 +114,7 @@ body {
 {
   position: absolute;
   width: 300px;
+  height:auto;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
@@ -131,7 +131,7 @@ body {
 #menu li
 {
   padding: 10px 0;
-  font-size: 22px;
+  font-size: 1rem;
 }
 
 
@@ -142,20 +142,37 @@ body {
 #desktop-menu-holder {
     display:none;
 }
+
 /*End menu*/
+/*General page header*/
+.page-header-headline-holder {
+    display:flex;
+    justify-content: center;
+}
+.page-header-headline {
+    font-size: 2rem;
+    font-family:'Dancing Script', cursive;
+}
 /*Grid item defition*/
 #grid-item-container {
+    min-height: 100%;
     clear:both;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap:1rem;
-    grid-template-rows: 50px 50px 50px 50px 50px 50px;
+    grid-template-rows: minmax(50px, auto);
+    margin-bottom:60px;
 }
 /*main page organization*/
 .main-headline-holder {
     justify-content: center;
     grid-column-start: 4;
-    grid-row-start: 3;
+    grid-row-start: 4;
+}
+.bass-area-text {
+    font-family:'Dancing Script', cursive;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 2px rgba(206,89,55,0);
+    color:black;
 }
 h1.main-headline {
     font-family:'Roboto Slab', sans-serif;
@@ -163,16 +180,90 @@ h1.main-headline {
 p.main-page-text {
     font-family:Roboto, sans-serif;
 }
+/*news page organization*/
+#news-page {
+    background:black;
+}
+.line-across-page {
+    grid-column-start:1;
+    grid-column-end:4;
+    border-bottom:2px double gray;
+}
+#news-headline {
+    font-size: 4rem;
+    grid-column-start:2;
+    grid-row-start:2;
+    text-decoration: underline;
+}
+.news-holder {
+    grid-column-start:1;
+    grid-column-end:4;
+    grid-row-start:auto;
+    margin-left:25px;
+}
+.article-title {
+    font-size:1.5rem;
+    margin-bottom:10px;
+}
+.article-summary-points {
+    font-size:.8rem;
+    color:#E0E0E0;
+    margin-bottom:20px;
+}
+.article-text {
+    font-size: .8rem;
+}
+.news-img {
+    width:100%;
+}
+.news-img-caption {
+    color:gray;
+}
+.click-for-more-link {
+    color: white !important;
+    font-style:italic;
+    text-decoration:none;
+}
+/*footer styling*/
+footer {
+    position:absolute;
+    bottom:0;
+    border-top:double 2px white;
+    clear:both;
+    height:50px;
+    width:100%;
+    background-color:black;
+    
+}
+footer ul {
+    list-style-type:none;
+    line-height:50px;
+    float:left;
+}
+footer ul li {
+    color:white;
+    float:left;
+    margin-right:10px;
+    font-size:.8rem;
+}
+footer ul li a {
+    color:white !important;
+    text-decoration:none;
+}
 /*Start Tablet Sizing*/
 @media screen and (min-width:576px){
     body {
         width:100%;
-        overflow-x: hidden;
+        height:100%;
     }
-   
+    .page-header-headline-holder {
+        position:static;
+        width:100%;
+        display:flex;
+        justify-content: center;
+    }
     #grid-item-container {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 100px 100px 100px 100px 100px;
     }
     .main-headline-holder {
         grid-column-start: 5;
@@ -189,15 +280,19 @@ p.main-page-text {
 }/*end tablets sizing*/
 
 
-@media screen and (min-width:1025px){
+@media screen and (min-width:992px){
     body {
         max-width: 100%;
         overflow-x:hidden;
         
     }
+    .page-header-headline-holder {
+        display:none;
+    }
      #menuToggle {
         display:none;
     }
+    
     #desktop-menu-holder {
          display:block;
          height:50px;
@@ -216,8 +311,17 @@ p.main-page-text {
 	   list-style-type: none;
 
     }
+    .logo-img-header {
+    width:51px;
+    margin-top:-16px;
+    margin-right:-20px;
+}
+    .logo-name {
+        font-family: 'Dancing Script', cursive;
+    }
     .login-link {
         float:right;
+        margin-right:10px;
     }
     #desktop-menu-holder ul a {
         color:white !important;
@@ -230,18 +334,24 @@ p.main-page-text {
         line-height:30px;
         height:30px;
     }
+    /*not visibile on mobile*/
+    header {
+        display:none;
+    }
     #grid-item-container {
 	clear: both;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-column-gap: 1em;
-	grid-template-rows: 100px 100px 100px;
+    }
+    .main-headline-holder {
+        grid-row-start:4;
     }
     .main-headline {
-        font-size:3rem;
+        font-size:4rem;
     }
     .main-page-text {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
    
 }/*end desktop sizing*/
